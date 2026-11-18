@@ -7,15 +7,15 @@ function ENC:new()
     registerForEvent("onInit", function() 
 	
 
-	dofile("modules/Native Settings.lua")
-	dofile("modules/Base.lua")
-	dofile("modules/EnemyVariety.lua")
-	dofile("modules/BreachProtocol.lua")
-	dofile("modules/reloadable_config.lua")
-	dofile("modules/Detection.lua")
-	dofile("modules/StatusEffects.lua")
-	dofile("modules/SmartWeapon.lua")
-	dofile("modules/TimeDilation.lua")
+	dofile("Modules/Native Settings.lua")
+	dofile("Modules/Base.lua")
+	dofile("Modules/EnemyVariety.lua")
+	dofile("Modules/BreachProtocol.lua")
+	dofile("Modules/reloadable_config.lua")
+	dofile("Modules/Detection.lua")
+	dofile("Modules/StatusEffects.lua")
+	dofile("Modules/SmartWeapon.lua")
+	dofile("Modules/TimeDilation.lua")
 
 	print("Enemies of Night City loaded")
 	
@@ -28,6 +28,8 @@ function ENC:new()
 
 
 	
+
+    return self
 
 end
 

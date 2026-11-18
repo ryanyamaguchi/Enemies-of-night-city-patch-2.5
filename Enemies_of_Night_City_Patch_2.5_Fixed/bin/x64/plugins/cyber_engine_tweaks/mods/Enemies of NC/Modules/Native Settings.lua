@@ -1,33 +1,157 @@
 
-ENC = {}
-
-
+local ENCSettings = {}
 
 local config = require("Modules/config")
 
-local nativeSettings = GetMod("nativeSettings")
+defaultSettings = {
+    EnableMod = true,
+    T1EnemyHP = 1,
+    T1EnemyDmg = 1,
+    T2EnemyHP = 1,
+    T2EnemyDmg = 1,
+    T3EnemyHP = 1,
+    T3EnemyDmg = 1,
+    EliteHP = 1,
+    EliteDmg = 1,
+    BossHP = 1,
+    BossDmg = 1,
+    MainBossHP = 1,
+    BossMaxDmgPerHitStat = 7,
+    MaxtacMaxDmgPerHitStat = 7,
+    SmasherMaxDmgPerHitStat = -3,
+    OdaMaxDmgPerHit = -2,
+    SasquatchMaxDmgPerHit = -2,
+    KurtMaxDmgPerHit = -2,
+    YashaMaxDmgPerHit = -2,
+    RibakovMaxDmgPerHitStat = -2,
+    MaxtacHP = 1,
+    MaxtacDmg = 1,
+    LowSubArmor = 1,
+    NormSubArmor = 1,
+    MedSubArmor = 1,
+    HighSubArmor = 1,
+    MinoWeakspot = 0.4,
+    OdaHP = 3,
+    OdaDmg = 1,
+    OdaStealthHealRate = 1,
+    SasquatchWeakspotHP = 2.5,
+    SasquatchHP = 3.5,
+    SasquatchDmg = 1.5,
+    SasquatchRegen = 0.3,
+    SasquatchCombatStimRegen = 5,
+    SasquatchCombatStimCooldown = 90,
+    SasquatchBerserkDuration = 30,
+    SasquatchBerserkCooldown = 60,
+    SasquatchGrabDmg = 0.75,
+    SmasherHP = 3.5,
+    SmasherDmg = 1,
+    SmasherRegen = 2.5,
+    SmasherBerserkDuration = 30,
+    SmasherBerserkCooldown = 60,
+    ChimeraHP = 4.66,
+    ChimeraDmg = 1,
+    ChimeraMetalstormDmg = 1,
+    ChimeraExplosiveMetalstormDmg = 1,
+    BuckHP = 1,
+    BuckDmg = 1,
+    CesarHP = 1,
+    CesarDmg = 1,
+    OzobHP = 1,
+    OzobDmg = 1,
+    RazorHP = 1,
+    RazorDmg = 1,
+    RhinoHP = 1,
+    RhinoDmg = 1,
+    TwinHP = 0.5,
+    TwinDmg = 1,
+    KurtHP = 4.7,
+    KurtDmg=1,
+    KurtKnifeThrowDmg=1,
+    KurtShotgunDmg=0.4,
+    KurtLmgDmg=1,
+    KurtCombatStimCooldown=60,
+    YashaHP=2,
+    YashaDmg=1,
+    YashaHealRate=1,
+    RibakovHP=1.5,
+    RibakovDmg=1,
+    RibakovCombatStimCooldown=60,
+    EnableBreachProtocol = true,
+    RemoveBreachRestrictions = false,
+    EnableUltimateQuickhacksBreach = true,
+    ICEPickLength = 4,
+    WeapJamLength = 4,
+    BlindLength = 4,
+    LocoLength = 5,
+    CyberwareLength = 6,
+    VulnLength = 5,
+    WeakLength = 5,
+    SuicideLength = 6,
+    MadLength = 6,
+    CollapseLength = 6,
+    GrenadeLength = 6,
+    ICEBreakerLength = 8,
+    Lvl1MinigameDuration = 30,
+    Lvl2MinigameDuration = 30,
+    Lvl3MinigameDuration = 30,
+    Lvl4MinigameDuration = 30,
+    RelaxedSpeed = 800,
+    AlertedSpeed = 1200,
+    CombatSpeed = 1600,
+    SniperSpeed = 400,
+    ParadeRelaxedSpeed = 120,
+    ParadeAlertedSpeed = 200,
+    PeriMedRange = 30,
+    TurretSpeed = 800,
+    ConsumableCooldown = 120,
+    CombatStimRegenRate = 16.67,
+    ApplicationEffectChance = 0.1,
+    ApplicationEffectDuration = 8,
+    BerserkDuration = 30,
+    BerserkCooldown = 90,
+    SmartWeapLockOnTime = 0.5,
+    SmartWeapLockOutTime = 5,
+    GlowingTattoos = 1,
+    KangTaoSmartDisrupt = 1,
+    --ExtraTimeDilation = 3
+    Sandy0Dilation = 1.5,
+    Sandy1Dilation = 2,
+    Sandy2Dilation = 2.5,
+    Sandy3Dilation = 3,
+    LegenLoot = true,
+    TygerHackRes = 3,
+    ScavHackRes = 3,
+    VDBHackRes = 6,
+    MiliHackRes = 4,
+    AraHackRes = 6,
+    KangHackRes = 5,
+    CorpHackRes = 4,
+    TrauHackRes = 5,
+    NCPDHackRes = 4,
+    MaxtHackRes = 6,
+    NUSAHackRes = 6
+}
 
-nativeSettings.addTab("/ENC", "ENC")
-nativeSettings.addSubcategory("/ENC/Overall", "Settings")
-nativeSettings.addSubcategory("/ENC/Main", "Main")
-nativeSettings.addSubcategory("/ENC/Oda", "Oda")
-nativeSettings.addSubcategory("/ENC/Sasquatch", "Sasquatch")
-nativeSettings.addSubcategory("/ENC/Smasher", "Smasher")
-nativeSettings.addSubcategory("/ENC/Chimera", "Chimera")
-nativeSettings.addSubcategory("/ENC/Kurt", "Kurt Hansen")
-nativeSettings.addSubcategory("/ENC/Yasha", "Yasha Ivanov")
-nativeSettings.addSubcategory("/ENC/Ribakov", "Ribakov")
-nativeSettings.addSubcategory("/ENC/BossSettings", "Boss Caps")
-nativeSettings.addSubcategory("/ENC/Boxing", "Beat on the Brat")
-nativeSettings.addSubcategory("/ENC/StatusEffects", "Status Effects")
-nativeSettings.addSubcategory("/ENC/SmartWeap", "Smart Weapons")
-nativeSettings.addSubcategory("/ENC/TimeDilation", "Time Dilation")
-nativeSettings.addSubcategory("/ENC/Breach", "Breach Protocol")
-nativeSettings.addSubcategory("/ENC/Stealth", "Stealth")
-nativeSettings.addSubcategory("/ENC/Loot", "Loot")
-nativeSettings.addSubcategory("/ENC/Resistances", "Resistances")
-
+config.tryCreateConfig("Data/config_new.json", defaultSettings)
+config.backwardComp("Data/config_new.json", defaultSettings)
 curSettings = config.loadFile("Data/config_new.json")
+local hasInvalidKey = false
+if type(curSettings) == "table" then
+    for k, _ in pairs(curSettings) do
+        if type(k) ~= "string" then
+            hasInvalidKey = true
+            break
+        end
+    end
+end
+if type(curSettings) ~= "table" or hasInvalidKey then
+    curSettings = {}
+end
+for k, v in pairs(defaultSettings) do
+    if type(curSettings[k]) ~= type(v) then
+        curSettings[k] = v
+    end
+end
 
 EnableMod = curSettings.EnableMod
 
@@ -180,136 +304,33 @@ NUSAHackRes = curSettings.NUSAHackRes
 
 
 
-function ENC:new()
+local nativeSettings = GetMod("nativeSettings")
 
-    defaultSettings = {
-        EnableMod = true,
-        T1EnemyHP = 1,
-        T1EnemyDmg = 1,
-        T2EnemyHP = 1,
-        T2EnemyDmg = 1,
-        T3EnemyHP = 1,
-        T3EnemyDmg = 1,
-        EliteHP = 1,
-        EliteDmg = 1,
-        BossHP = 1,
-        BossDmg = 1,
-        MainBossHP = 1,
-        BossMaxDmgPerHitStat = 7,
-        MaxtacMaxDmgPerHitStat = 7,
-        SmasherMaxDmgPerHitStat = -3,
-        OdaMaxDmgPerHit = -2,
-        SasquatchMaxDmgPerHit = -2,
-        KurtMaxDmgPerHit = -2,
-        YashaMaxDmgPerHit = -2,
-        RibakovMaxDmgPerHitStat = -2,
-        MaxtacHP = 1,
-        MaxtacDmg = 1,
-        LowSubArmor = 1,
-        NormSubArmor = 1,
-        MedSubArmor = 1,
-        HighSubArmor = 1,
-        MinoWeakspot = 0.4,
-        OdaHP = 3,
-        OdaDmg = 1,
-        OdaStealthHealRate = 1,
-        SasquatchWeakspotHP = 2.5,
-        SasquatchHP = 3.5,
-        SasquatchDmg = 1.5,
-        SasquatchRegen = 0.3,
-        SasquatchCombatStimRegen = 5,
-        SasquatchCombatStimCooldown = 90,
-        SasquatchBerserkDuration = 30,
-        SasquatchBerserkCooldown = 60,
-        SasquatchGrabDmg = 0.75,
-        SmasherHP = 3.5,
-        SmasherDmg = 1,
-        SmasherRegen = 2.5,
-        SmasherBerserkDuration = 30,
-        SmasherBerserkCooldown = 60,
-        ChimeraHP = 4.66,
-        ChimeraDmg = 1,
-        ChimeraMetalstormDmg = 1,
-        ChimeraExplosiveMetalstormDmg = 1,
-        BuckHP = 1,
-        BuckDmg = 1,
-        CesarHP = 1,
-        CesarDmg = 1,
-        OzobHP = 1,
-        OzobDmg = 1,
-        RazorHP = 1,
-        RazorDmg = 1,
-        RhinoHP = 1,
-        RhinoDmg = 1,
-        TwinHP = 0.5,
-        TwinDmg = 1,
-        KurtHP = 4.7,
-        KurtDmg=1,
-        KurtKnifeThrowDmg=1,
-        KurtShotgunDmg=0.4,
-        KurtLmgDmg=1,
-        KurtCombatStimCooldown=60,
-        YashaHP=2,
-        YashaDmg=1,
-        YashaHealRate=1,
-        RibakovHP=1.5,
-        RibakovDmg=1,
-        RibakovCombatStimCooldown=60,
-        EnableBreachProtocol = true,
-        RemoveBreachRestrictions = false,
-        EnableUltimateQuickhacksBreach = true,
-        ICEPickLength = 4,
-        WeapJamLength = 4,
-        BlindLength = 4,
-        LocoLength = 5,
-        CyberwareLength = 6,
-        VulnLength = 5,
-        WeakLength = 5,
-        SuicideLength = 6,
-        MadLength = 6,
-        CollapseLength = 6,
-        GrenadeLength = 6,
-        ICEBreakerLength = 8,
-        Lvl1MinigameDuration = 30,
-        Lvl2MinigameDuration = 30,
-        Lvl3MinigameDuration = 30,
-        Lvl4MinigameDuration = 30,
-        RelaxedSpeed = 800,
-        AlertedSpeed = 1200,
-        CombatSpeed = 1600,
-        SniperSpeed = 400,
-        ParadeRelaxedSpeed = 120,
-        ParadeAlertedSpeed = 200,
-        PeriMedRange = 30,
-        TurretSpeed = 800,
-        ConsumableCooldown = 120,
-        CombatStimRegenRate = 16.67,
-        ApplicationEffectChance = 0.1,
-        ApplicationEffectDuration = 8,
-        BerserkDuration = 30,
-        BerserkCooldown = 90,
-        SmartWeapLockOnTime = 0.5,
-        SmartWeapLockOutTime = 5,
-        GlowingTattoos = 1,
-        KangTaoSmartDisrupt = 1,
-        --ExtraTimeDilation = 3
-        Sandy0Dilation = 1.5,
-        Sandy1Dilation = 2,
-        Sandy2Dilation = 2.5,
-        Sandy3Dilation = 3,
-        LegenLoot = true,
-        TygerHackRes = 3,
-        ScavHackRes = 3,
-        VDBHackRes = 6,
-        MiliHackRes = 4,
-        AraHackRes = 6,
-        KangHackRes = 5,
-        CorpHackRes = 4,
-        TrauHackRes = 5,
-        NCPDHackRes = 4,
-        MaxtHackRes = 6,
-        NUSAHackRes = 6
-    }
+function ENCSettings:new()
+    if nativeSettings == nil then
+        print("[Enemies of NC] Native Settings UI not found or disabled; using Data/config_new.json settings without menu.")
+        return self
+    end
+
+    nativeSettings.addTab("/ENC", "ENC")
+    nativeSettings.addSubcategory("/ENC/Overall", "Settings")
+    nativeSettings.addSubcategory("/ENC/Main", "Main")
+    nativeSettings.addSubcategory("/ENC/Oda", "Oda")
+    nativeSettings.addSubcategory("/ENC/Sasquatch", "Sasquatch")
+    nativeSettings.addSubcategory("/ENC/Smasher", "Smasher")
+    nativeSettings.addSubcategory("/ENC/Chimera", "Chimera")
+    nativeSettings.addSubcategory("/ENC/Kurt", "Kurt Hansen")
+    nativeSettings.addSubcategory("/ENC/Yasha", "Yasha Ivanov")
+    nativeSettings.addSubcategory("/ENC/Ribakov", "Ribakov")
+    nativeSettings.addSubcategory("/ENC/BossSettings", "Boss Caps")
+    nativeSettings.addSubcategory("/ENC/Boxing", "Beat on the Brat")
+    nativeSettings.addSubcategory("/ENC/StatusEffects", "Status Effects")
+    nativeSettings.addSubcategory("/ENC/SmartWeap", "Smart Weapons")
+    nativeSettings.addSubcategory("/ENC/TimeDilation", "Time Dilation")
+    nativeSettings.addSubcategory("/ENC/Breach", "Breach Protocol")
+    nativeSettings.addSubcategory("/ENC/Stealth", "Stealth")
+    nativeSettings.addSubcategory("/ENC/Loot", "Loot")
+    nativeSettings.addSubcategory("/ENC/Resistances", "Resistances")
 
 
 
@@ -397,56 +418,56 @@ function ENC:new()
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Boss Max Damage Cap", "Adjust the max damage cap for all bosses. In percent of health", 0, 10.0, 1, curSettings.BossMaxDmgPerHitStat, defaultSettings.BossMaxDmgPerHitStat, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Boss Max Damage Cap", "Adjust the max damage cap for all bosses. In percent of health", 0, 10, 1, curSettings.BossMaxDmgPerHitStat, defaultSettings.BossMaxDmgPerHitStat, function(state)
         curSettings.BossMaxDmgPerHitStat = state
         config.saveFile("Data/config_new.json", curSettings)
         BossMaxDmgPerHitStat = curSettings.BossMaxDmgPerHitStat
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Maxtac Max Damage Cap", "Adjust the max damage cap for Maxtac. In percent of health", 0, 10.0, 1, curSettings.MaxtacMaxDmgPerHitStat, defaultSettings.MaxtacMaxDmgPerHitStat, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Maxtac Max Damage Cap", "Adjust the max damage cap for Maxtac. In percent of health", 0, 10, 1, curSettings.MaxtacMaxDmgPerHitStat, defaultSettings.MaxtacMaxDmgPerHitStat, function(state)
         curSettings.MaxtacMaxDmgPerHitStat = state
         config.saveFile("Data/config_new.json", curSettings)
         MaxtacMaxDmgPerHitStat = curSettings.MaxtacMaxDmgPerHitStat
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Smasher Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0.0, 1, curSettings.SmasherMaxDmgPerHitStat, defaultSettings.SmasherMaxDmgPerHitStat, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Smasher Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0, 1, curSettings.SmasherMaxDmgPerHitStat, defaultSettings.SmasherMaxDmgPerHitStat, function(state)
         curSettings.SmasherMaxDmgPerHitStat = state
         config.saveFile("Data/config_new.json", curSettings)
         SmasherMaxDmgPerHitStat = curSettings.SmasherMaxDmgPerHitStat
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Oda Max Damage Cap Substraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0.0, 1, curSettings.OdaMaxDmgPerHit, defaultSettings.OdaMaxDmgPerHit, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Oda Max Damage Cap Substraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0, 1, curSettings.OdaMaxDmgPerHit, defaultSettings.OdaMaxDmgPerHit, function(state)
         curSettings.OdaMaxDmgPerHit = state
         config.saveFile("Data/config_new.json", curSettings)
         OdaMaxDmgPerHit = curSettings.OdaMaxDmgPerHit
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Sasquatch Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0.0, 1, curSettings.SasquatchMaxDmgPerHit, defaultSettings.SasquatchMaxDmgPerHit, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Sasquatch Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0, 1, curSettings.SasquatchMaxDmgPerHit, defaultSettings.SasquatchMaxDmgPerHit, function(state)
         curSettings.SasquatchMaxDmgPerHit = state
         config.saveFile("Data/config_new.json", curSettings)
         SasquatchMaxDmgPerHit = curSettings.SasquatchMaxDmgPerHit
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Kurt Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0.0, 1, curSettings.KurtMaxDmgPerHit, defaultSettings.KurtMaxDmgPerHit, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Kurt Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0, 1, curSettings.KurtMaxDmgPerHit, defaultSettings.KurtMaxDmgPerHit, function(state)
         curSettings.KurtMaxDmgPerHit = state
         config.saveFile("Data/config_new.json", curSettings)
         KurtMaxDmgPerHit = curSettings.KurtMaxDmgPerHit
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Yasha Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0.0, 1, curSettings.YashaMaxDmgPerHit, defaultSettings.YashaMaxDmgPerHit, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Yasha Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0, 1, curSettings.YashaMaxDmgPerHit, defaultSettings.YashaMaxDmgPerHit, function(state)
         curSettings.YashaMaxDmgPerHit = state
         config.saveFile("Data/config_new.json", curSettings)
         YashaMaxDmgPerHit = curSettings.YashaMaxDmgPerHit
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeInt("/ENC/BossSettings", "Ribakov Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0.0, 1, curSettings.RibakovMaxDmgPerHitStat, defaultSettings.RibakovMaxDmgPerHitStat, function(state)
+    nativeSettings.addRangeInt("/ENC/BossSettings", "Ribakov Max Damage Cap Subtraction", "Substracts this value from the boss max damage cap. In percent of health. Overall damage cap should be greater than or equal to zero", -10, 0, 1, curSettings.RibakovMaxDmgPerHitStat, defaultSettings.RibakovMaxDmgPerHitStat, function(state)
         curSettings.RibakovMaxDmgPerHitStat = state
         config.saveFile("Data/config_new.json", curSettings)
         RibakovMaxDmgPerHitStat = curSettings.RibakovMaxDmgPerHitStat
@@ -649,7 +670,7 @@ function ENC:new()
         dofile("Modules/reloadable_config.lua")
     end)
 
-    nativeSettings.addRangeFloat("/ENC/Kurt", "Kurt Health Multiplier", "Adjust the health multiplier for Kurt Hansen. Vanilla is 4.66, ENC default is 4.66", 0.1, 10.0, 0.1, "%.2f", curSettings.KurtHP, defaultSettings.KurtHP, function(state)
+    nativeSettings.addRangeFloat("/ENC/Kurt", "Kurt Health Multiplier", "Adjust the health multiplier for Kurt Hansen. Vanilla is 4.66, ENC default is 4.7", 0.1, 10.0, 0.1, "%.2f", curSettings.KurtHP, defaultSettings.KurtHP, function(state)
         curSettings.KurtHP = state
         config.saveFile("Data/config_new.json", curSettings)
         KurtHP = curSettings.KurtHP
@@ -956,7 +977,7 @@ function ENC:new()
         dofile("Modules/Detection.lua")
 	 end)
 
-     nativeSettings.addRangeInt("/ENC/Stealth", "Sniper Relaxed State Detection Speed", "Detection speed of snipers in relaxed state. Vanilla is 40, ENC default is 150", 40, 2000, 10, curSettings.SniperSpeed, defaultSettings.SniperSpeed, function(state)
+     nativeSettings.addRangeInt("/ENC/Stealth", "Sniper Relaxed State Detection Speed", "Detection speed of snipers in relaxed state. Vanilla is 40, ENC default is 400", 40, 2000, 10, curSettings.SniperSpeed, defaultSettings.SniperSpeed, function(state)
         curSettings.SniperSpeed = state
         config.saveFile("Data/config_new.json", curSettings)
         SniperSpeed = curSettings.SniperSpeed
@@ -1182,9 +1203,10 @@ function ENC:new()
 	 end)
 
 
+    return self
 end
 
-return ENC:new()
+return ENCSettings:new()
 
 
 

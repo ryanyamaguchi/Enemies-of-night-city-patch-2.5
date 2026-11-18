@@ -114,6 +114,7 @@ if EnableMod then
 
 	--Immunities
 	addToList("Ability.HasElectrocuteImmunity_inline0.stats", "Items.GroundingPlating_inline3")
+	TweakDB:SetFlat("Ability.HasElectrocuteImmunity.showInCodex", true)
 	TweakDB:CreateRecord("ElectrocuteImmuneAbilityGrp", "gamedataGameplayAbilityGroup_Record")
 	addToList("ElectrocuteImmuneAbilityGrp.abilities", "Ability.HasElectrocuteImmunity")
 
@@ -243,10 +244,10 @@ if EnableMod then
 	TweakDB:SetFlat("HitReactionMediumAbilityGrp.abilities", {"ImpactMediumAbility", "ImpactCoverMediumAbility", "StaggerMediumAbility", "StaggerCoverMediumAbility", "KnockdownTankyAbility", "KnockdownCoverTankyAbility", "KnockdownImpulseTankyAbility", "TranqImmuneAbility", "WoundLAAbility", "WoundRAAbility", "WoundLLAbility", "WoundRLAbility", "DismHAbility", "DismLAAbility", "DismRAAbility", "DismLLAbility", "DismRLAbility", "HitTImpactAbility", "HitTImpactMeleeAbility", "HitTStaggerAbility", "HitTStaggerMeleeAbility", "HitTPainAbility", "HitTKnockdownAbility", "HitTPainAbility", "HitTKnockdownAbility", "StunImmuneAbility", "KnockdownImmuneAbility", "ThrowImmuneAbility", "WoundImmuneAbility"})
 
 	TweakDB:CreateRecord("HitReactionNormalAbilityGrp", "gamedataGameplayAbilityGroup_Record")
-	TweakDB:SetFlat("HitReactionNormalAbilityGrp.abilities", {"ImpactMediumAbility", "ImpactCoverMediumAbility", "StaggerMediumAbility", "StaggerCoverMediumAbility", "KnockdownMediumAbility", "KnockdownCoverMediumAbility", "KnockdownImpulseMediumAbility", "TranqImmuneAbility", "WoundLALowerAbility", "WoundRALowerAbility", "WoundLLLowerAbility", "WoundRLLowerAbility", "DismHLowerAbility", "DismLALowerAbility", "DismRALowerAbility", "DismLLLowerAbility", "DismRLLowerAbility", "HitTImpactAbility", "HitTImpactMeleeAbility", "HitTStaggerAbility", "HitTStaggerMeleeAbility", "HitTPainAbility", "HitTKnockdownAbility"})
+	TweakDB:SetFlat("HitReactionNormalAbilityGrp.abilities", {"ImpactMediumAbility", "ImpactCoverMediumAbility", "StaggerMediumAbility", "StaggerCoverMediumAbility", "KnockdownMediumAbility", "KnockdownCoverMediumAbility", "KnockdownImpulseMediumAbility", "TranqImmuneAbility", "WoundImmuneAbility", "WoundLALowerAbility", "WoundRALowerAbility", "WoundLLLowerAbility", "WoundRLLowerAbility", "DismHLowerAbility", "DismLALowerAbility", "DismRALowerAbility", "DismLLLowerAbility", "DismRLLowerAbility", "HitTImpactAbility", "HitTImpactMeleeAbility", "HitTStaggerAbility", "HitTStaggerMeleeAbility", "HitTPainAbility", "HitTKnockdownAbility"})
 
 	TweakDB:CreateRecord("HitReactionLightAbilityGrp", "gamedataGameplayAbilityGroup_Record")
-	TweakDB:SetFlat("HitReactionLightAbilityGrp.abilities", {"ImpactMediumAbility", "ImpactCoverMediumAbility", "StaggerMediumAbility", "StaggerCoverMediumAbility", "KnockdownMediumAbility", "KnockdownCoverMediumAbility", "KnockdownImpulseMediumAbility", "TranqImmuneAbility", "WoundLALowerAbility", "WoundRALowerAbility", "WoundLLLowerAbility", "WoundRLLowerAbility", "DismHLowerAbility", "DismLALowerAbility", "DismRALowerAbility", "DismLLLowerAbility", "DismRLLowerAbility", "HitTImpactLowerAbility", "HitTImpactMeleeLowerAbility", "HitTStaggerLowerAbility", "HitTStaggerMeleeLowerAbility", "HitTPainLowerAbility", "HitTKnockdownLowerAbility"})
+	TweakDB:SetFlat("HitReactionLightAbilityGrp.abilities", {"ImpactMediumAbility", "ImpactCoverMediumAbility", "StaggerMediumAbility", "StaggerCoverMediumAbility", "KnockdownMediumAbility", "KnockdownCoverMediumAbility", "KnockdownImpulseMediumAbility", "TranqImmuneAbility", "WoundImmuneAbility", "WoundLALowerAbility", "WoundRALowerAbility", "WoundLLLowerAbility", "WoundRLLowerAbility", "DismHLowerAbility", "DismLALowerAbility", "DismRALowerAbility", "DismLLLowerAbility", "DismRLLowerAbility", "HitTImpactLowerAbility", "HitTImpactMeleeLowerAbility", "HitTStaggerLowerAbility", "HitTStaggerMeleeLowerAbility", "HitTPainLowerAbility", "HitTKnockdownLowerAbility"})
 
 
 
@@ -658,6 +659,10 @@ if EnableMod then
 	TweakDB:CreateRecord("T3HeavyRangedAbilityGrp", "gamedataGameplayAbilityGroup_Record")
 	T3HeavyRanged = {"Ability.HasChargeJump", "Ability.CanUseCombatStims", "Ability.IsHeavyRangedArchetype", "Ability.IsTier3Archetype", "Ability.CanUseCovers", "Ability.CanCatchUpDistance", "Ability.CanCatchUp", "Ability.CanUseGrenades", "Ability.HasPainEditor", "CounterImmuneAbility", "Ability.HasExtendedHitReactionImmunity"}
 	TweakDB:SetFlat("T3HeavyRangedAbilityGrp.abilities", T3HeavyRanged)
+
+	TweakDB:CreateRecord("T3HeavyRangedNoJumpAbilityGrp", "gamedataGameplayAbilityGroup_Record")
+	T3HeavyRangedNoJump = {"Ability.CanUseCombatStims", "Ability.IsHeavyRangedArchetype", "Ability.IsTier3Archetype", "Ability.CanUseCovers", "Ability.CanCatchUpDistance", "Ability.CanCatchUp", "Ability.CanUseGrenades", "Ability.HasPainEditor", "CounterImmuneAbility", "Ability.HasExtendedHitReactionImmunity"}
+	TweakDB:SetFlat("T3HeavyRangedNoJumpAbilityGrp.abilities", T3HeavyRangedNoJump)
 
 	TweakDB:CreateRecord("T2ShotAbilityGrp", "gamedataGameplayAbilityGroup_Record")
 	T2Shot = {"Ability.CanUseCombatStims", "Ability.IsShotgunnerArchetype", "Ability.IsTier2Archetype", "Ability.CanUseCovers", "Ability.CanCatchUpDistance", "Ability.CanCatchUp", "Ability.CanUseGrenades"}
@@ -1521,7 +1526,8 @@ if EnableMod then
 	createCondition("ReflectQuickhackNextPhaseOR", {"Condition.HackingInterruptedStatusEffects", "Condition.HitTimeout1dot5MinSeverity2"}, true)
 
 	TweakDB:CloneRecord("ReflectQuickhackPhase", "NetrunnerActions.HackAction_inline4")
-	TweakDB:SetFlat("ReflectQuickhackPhase.duration", -1)
+	TweakDB:SetFlat("ReflectQuickhackPhase.duration", 4)
+	TweakDB:SetFlat("ReflectQuickhackPhase.useDurationFromAnimSlot", false)
 	TweakDB:SetFlat("ReflectQuickhackPhase.toNextPhaseCondition", {"ReflectQuickhackNextPhaseORCOND"})
 	TweakDB:SetFlat("ReflectQuickhackPhase.changeNPCState", "")
 
@@ -1683,7 +1689,7 @@ if EnableMod then
 
 	TweakDB:CloneRecord("AbilityHasKers", "Condition.AbilityHasKerenzikov")
 	TweakDB:SetFlat("AbilityHasKers.abilities", {"Ability.HasKers"})
-	setCOND("ConsumableSandyAction", {"AbilityHasKers", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.TargetIsVisible"}, false)
+	setCOND("ConsumableSandyAction", {"AbilityHasKers", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.TargetIsVisible", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotInStatesEquip"}, false)
 	TweakDB:SetFlat("ConsumableSandyAction.cooldowns", {"SpecialActions.CombatStimCooldown_Hard"})
 
 
@@ -1700,7 +1706,7 @@ if EnableMod then
 
 	createReflectQuickhackAction("ConsumableFire", "NetrunnerActions.CoverHackOverheat_inline4", {"BurnApplicationEffect", "BaseStatusEffect.BurnGrenade", "BaseStatusEffect.Burning", "BaseStatusEffect.Burning_Tech_55", "BaseStatusEffect.EpicBurnGrenade", "BaseStatusEffect.EpicPlusBurnGrenade", "BaseStatusEffect.LegendaryBurnGrenade", "BaseStatusEffect.LegendaryPlusBurnGrenade", "BaseStatusEffect.Liberty_Padre_Burning", "BaseStatusEffect.Liberty_Padre_BurningChanceBuff", "BaseStatusEffect.LightBurning_Tech_55", "BaseStatusEffect.MediumBurning", "BaseStatusEffect.RareBurnGrenade", "BaseStatusEffect.RarePlusBurnGrenade", "BaseStatusEffect.Testera_Nicolas_SelfBurning", "BaseStatusEffect.UncommonBurnGrenade", "BaseStatusEffect.UncommonPlusBurnGrenade", "Sasquatch.BurningGrenade", "AIQuickHackStatusEffect.HackBurning", "BurnQuickhackEffect", "AIQuickHackStatusEffect.HackOverheat", "AIQuickHackStatusEffect.HackOverheatBase", "AIQuickHackStatusEffect.HackOverheatRibakov", "AIQuickHackStatusEffect.HackOverheatTier2", "AIQuickHackStatusEffect.HackOverheatTier3", "BaseStatusEffect.BaseOverheat", "BaseStatusEffect.BossOverheatLevel1", "BaseStatusEffect.BossOverheatLevel2", "BaseStatusEffect.BossOverheatLevel3", "BaseStatusEffect.BossOverheatLevel4", "BaseStatusEffect.BossOverheatLevel4PlusPlus", "BaseStatusEffect.Overheat", "BaseStatusEffect.OverheatGrisGris", "BaseStatusEffect.OverheatLevel1", "BaseStatusEffect.OverheatLevel2", "BaseStatusEffect.OverheatLevel3", "BaseStatusEffect.OverheatLevel4", "BaseStatusEffect.OverheatLevel4PlusPlus"})
 
-	setCOND("ConsumableFireResAction", {"Condition.AbilityIsReckless", "Condition.AbilityCanUseCombatStims", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "ConsumableFireReflectQuickhackActionOROR", "Condition.NotAbilityIsTier1Archetype"}, false)
+	setCOND("ConsumableFireResAction", {"Condition.AbilityIsReckless", "Condition.AbilityCanUseCombatStims", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "ConsumableFireReflectQuickhackActionOROR", "Condition.NotAbilityIsTier1Archetype", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotInStatesEquip"}, false)
 
 
 
@@ -1714,7 +1720,7 @@ if EnableMod then
 	TweakDB:SetFlat("ConsumableElecResAction.subActions", {"ConsumableElecResStatusEffectSubAction"})
 
 	createReflectQuickhackAction("ConsumableElec", "NetrunnerActions.CoverHackOverheat_inline4", {"BaseStatusEffect.Electrocuted", "OverloadQuickhackEffect", "AIQuickHackStatusEffect.HackOverload", "AdamSmasher.AdamSmasherOverload", "BaseStatusEffect.BaseOverload", "BaseStatusEffect.BlackWallMechanicalOverload", "BaseStatusEffect.Overload", "BaseStatusEffect.OverloadEMP", "BaseStatusEffect.OverloadGrisGris", "BaseStatusEffect.OverloadLevel1", "BaseStatusEffect.OverloadLevel2", "BaseStatusEffect.OverloadLevel3", "BaseStatusEffect.OverloadLevel4", "BaseStatusEffect.OverloadLevel4PlusPlus", "BaseStatusEffect.OverloadShort", "Chimera.ChimeraOverloadWeakspot", "Minotaur.OverloadWeakspot", "Oda.OdaOverload", "Sasquatch.SasquatchOverload"})
-	setCOND("ConsumableElecResAction", {"Condition.AbilityIsReckless", "Condition.StatusEffectTypeEmp", "Condition.AbilityCanUseCombatStims", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.NotAbilityIsTier1Archetype"}, false)
+	setCOND("ConsumableElecResAction", {"Condition.AbilityIsReckless", "Condition.StatusEffectTypeEmp", "Condition.AbilityCanUseCombatStims", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.NotAbilityIsTier1Archetype", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotInStatesEquip"}, false)
 
 
 
@@ -1727,7 +1733,7 @@ if EnableMod then
 	--poison tag works well enough
 	TweakDB:CloneRecord("ConsumablePoisonResAction", "ConsumableSandyAction")
 	TweakDB:SetFlat("ConsumablePoisonResAction.subActions", {"ConsumablePoisonResStatusEffectSubAction"})
-	setCOND("ConsumablePoisonResAction", {"Condition.AbilityIsReckless", "Condition.StatusEffectTypePoisoned", "Condition.AbilityCanUseCombatStims", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.NotAbilityIsTier1Archetype"}, false)
+	setCOND("ConsumablePoisonResAction", {"Condition.AbilityIsReckless", "Condition.StatusEffectTypePoisoned", "Condition.AbilityCanUseCombatStims", "Condition.NotIsInWorkspot", "Condition.NotInCover", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.NotTicketTakeCover", "Condition.NotTicketSync", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.NotAbilityIsTier1Archetype", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotInStatesEquip"}, false)
 
 
 
@@ -1751,7 +1757,7 @@ if EnableMod then
 
 
 	--gotta add not has shotgun otherwise the shotgunner will select the wrong catchup from this selector and be stuck
-	createSelector("CatchUpSelector", {"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.InStatesMoving", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.NotAbilityIsReckless", "Condition.HealthAbove30perc", "Condition.NotHasShotgun", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.NotAbilityIsSniperArchetype"}, {"MovementActions.SandevistanCatchUpSprint", "MovementActions.CatchUpSprint", "MovementActions.CatchUpWalk", "MovementActions.SandevistanCatchUpDistance", "MovementActions.CatchUpDistance"}, false)
+	createSelector("CatchUpSelector", {"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.InStatesMoving", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.NotAbilityIsReckless", "Condition.NotHasShotgun", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.NotAbilityIsSniperArchetype"}, {"MovementActions.SandevistanCatchUpSprint", "MovementActions.CatchUpSprint", "MovementActions.CatchUpWalk", "MovementActions.SandevistanCatchUpDistance", "MovementActions.CatchUpDistance"}, false)
 
 	createCondition("RecklessAndCatchUp", {"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.InStatesMoving", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.AbilityIsReckless"}, false)
 
@@ -1865,8 +1871,8 @@ if EnableMod then
 	createSelector("ShotgunnerCatchUpSelector",{"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.InStatesMoving", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.HasShotgun", "Condition.NotAbilityCanSprintHarass"}, {"RecklessShotgunnerCatchUpAction", "MovementActions.CatchUpSprint"}, false)
 
 	TweakDB:CloneRecord("ShotgunStrafeAroundTarget", "AdamSmasherBoss.StrafeAroundTargetAutoShotgun")
-	setCOND("ShotgunStrafeAroundTarget", {"Condition.TargetBelow15m", "Condition.NotAbilityIsSniperArchetype", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.HealthAbove30perc", "Condition.HasShotgun"}, false)
-	createSelector("ShotgunStrafeAroundTargetSelector", {"Condition.TargetBelow15m", "Condition.NotAbilityIsSniperArchetype", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.HealthAbove30perc", "Condition.NotTicketStrafe", "Condition.HasShotgun"}, {"ShotgunStrafeAroundTarget"}, false)
+	setCOND("ShotgunStrafeAroundTarget", {"Condition.TargetBelow15m", "Condition.NotAbilityIsSniperArchetype", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.HasShotgun"}, false)
+	createSelector("ShotgunStrafeAroundTargetSelector", {"Condition.TargetBelow15m", "Condition.NotAbilityIsSniperArchetype", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.NotTicketStrafe", "Condition.HasShotgun"}, {"ShotgunStrafeAroundTarget"}, false)
 
 
 
@@ -1876,7 +1882,7 @@ if EnableMod then
 	createCondition("CloseRingOR", {"Condition.HasShotgun"}, true)
 	createSelector("CloseRingSelector", {"CloseRingOROR", "Condition.NotAbilityIsSniperArchetype", "Condition.NotAbilityIsNetrunnerArchetype", "MovementActions.RingSelectorCondition"}, {"MovementActions.MediumRing1stFilterCoverLOS", "MovementActions.MediumRing2ndFilterCoverLOS", "MovementActions.MediumRing1stFilterCoverAny", "MovementActions.MediumRing2ndFilterCoverAny", "MovementActions.CloseRing2ndFilterLOS", "MovementActions.MediumRing2ndFilterLOS", "MovementActions.CloseRing1stFilterNoLimit", "MovementActions.MediumRing1stFilterNoLimit", "MovementActions.MediumRing2ndFilterNoLimit", "MovementActions.CloseRing2ndFilterNoLimit", "MovementActions.SquadRingDefault"}, false)
 
-	TweakDB:SetFlat("GenericArchetype.MovementPolicyCompositeDefault.nodes", {"MovementActions.SuccessWhileHacking", "MovementActions.SuccessWhileCharging", "MovementActions.LocomotionMalfunction", "MovementActions.SuccessOnInterruptionSignals", "CatchUpSelector", "ShotgunnerCatchUpSelector", "MovementActions.SandevistanHarassMovementSelector", "CloseRingSelector", "RecklessRingSelector", "FarRingSelector", "DefaultRingSelector", "ShotgunStrafeAroundTargetSelector", "MovementActions.HoldPosition", "GenericArchetype.Success"})
+	TweakDB:SetFlat("GenericArchetype.MovementPolicyCompositeDefault.nodes", {"MovementActions.SuccessWhileHacking", "MovementActions.SuccessWhileCharging", "MovementActions.LocomotionMalfunction", "MovementActions.SuccessOnInterruptionSignals", "CatchUpSelector", "ShotgunnerCatchUpSelector", "LowHealthRetreatSelector", "MovementActions.SandevistanHarassMovementSelector", "CloseRingSelector", "RecklessRingSelector", "FarRingSelector", "DefaultRingSelector", "ShotgunStrafeAroundTargetSelector", "GenericArchetype.RingSelector", "MovementActions.HoldPosition", "GenericArchetype.Success"})
 
 
 
@@ -1924,7 +1930,7 @@ if EnableMod then
 	--despite the anim wrapper you still need to create a new anim file containing jump anims and link it to the weap of choice like Wea_HeavyMachineGun
 
 	TweakDB:CloneRecord("RangedWeaponChargeJumpTauntAction", "MeleeOneHandedActions.SingleMeleeAttackChargeJump01TauntDefinition")
-	setCOND("RangedWeaponChargeJumpTauntAction", {"Condition.CalculatePathStraightToTarget", "Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLegs", "Condition.AbilityHasChargeJump", "Condition.TargetAbove7mLongPrediction", "Condition.TargetBelow45deg", "Condition.TargetPOVBelow90deg", "Condition.NotTargetHeadingToOwnerDotProduct", "CONDHasHMG_OR_LMGOR", "Condition.HealthAbove30perc", "RangedWeaponChargeJumpCooldownCond"}, false)
+	setCOND("RangedWeaponChargeJumpTauntAction", {"Condition.CalculatePathStraightToTarget", "Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLegs", "Condition.AbilityHasChargeJump", "Condition.TargetAbove7mLongPrediction", "Condition.TargetBelow45deg", "Condition.TargetPOVBelow90deg", "Condition.NotTargetHeadingToOwnerDotProduct", "CONDHasHMG_OR_LMGOR", "Condition.HealthAbove30perc", "RangedWeaponChargeJumpCooldownCond", "Condition.NotIsMaxTacNPCRarity"}, false)
 	addToList("RangedWeaponChargeJumpTauntAction.subActions", "ApplyRangedWeaponChargeJumpTempDisableSandyEffectSubAction")
 
 
@@ -1935,21 +1941,24 @@ if EnableMod then
 	TweakDB:CloneRecord("RangedWeaponChargeJumpAttackStartPhase", "MeleeActions.BaseSingleMeleeAttackChargeJumpDefinition_inline0")
 	TweakDB:SetFlat("RangedWeaponChargeJumpAttackStartPhase.changeNPCState", "")
 	TweakDB:SetFlat("RangedWeaponChargeJumpAttackStartPhase.duration", 1)
+	TweakDB:SetFlat("RangedWeaponChargeJumpAttackStartPhase.useDurationFromAnimSlot", false)
 
 	TweakDB:CloneRecord("RangedWeaponChargeJumpAttackLoopPhase", "RangedWeaponChargeJumpAttackStartPhase")
 	TweakDB:SetFlat("RangedWeaponChargeJumpAttackLoopPhase.duration", 1)
+	TweakDB:SetFlat("RangedWeaponChargeJumpAttackLoopPhase.useDurationFromAnimSlot", false)
 
 	TweakDB:CloneRecord("RangedWeaponChargeJumpAction", "MeleeOneHandedActions.SingleMeleeAttackChargeJump01Definition")
 	TweakDB:SetFlat("RangedWeaponChargeJumpAction.cooldowns", {"AnimalsBoss.MeleeJumpCooldown"})
 	TweakDB:SetFlat("RangedWeaponChargeJumpAction.startup", "RangedWeaponChargeJumpAttackStartPhase")
 	TweakDB:SetFlat("RangedWeaponChargeJumpAction.loop", "RangedWeaponChargeJumpAttackLoopPhase")
 	addToList("RangedWeaponChargeJumpAction.startupSubActions", "ApplyChargeJumpInAirEffectSubAction")
-	setCOND("RangedWeaponChargeJumpAction", {"Condition.CalculatePathStraightToTarget", "Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLegs", "Condition.AbilityHasChargeJump", "Condition.TargetAbove7mLongPrediction", "Condition.TargetBelow45deg", "Condition.TargetPOVBelow90deg", "Condition.NotTargetHeadingToOwnerDotProduct", "CONDHasHMG_OR_LMGOR", "Condition.HealthAbove30perc", "RangedWeaponChargeJumpCooldownCond"}, false)
+	setCOND("RangedWeaponChargeJumpAction", {"Condition.CalculatePathStraightToTarget", "Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLegs", "Condition.AbilityHasChargeJump", "Condition.TargetAbove7mLongPrediction", "Condition.TargetBelow45deg", "Condition.TargetPOVBelow90deg", "Condition.NotTargetHeadingToOwnerDotProduct", "CONDHasHMG_OR_LMGOR", "Condition.HealthAbove30perc", "RangedWeaponChargeJumpCooldownCond", "Condition.NotIsMaxTacNPCRarity"}, false)
 	TweakDB:SetFlat("RangedWeaponChargeJumpAction.loopSubActions", {})
 
 	TweakDB:CloneRecord("RangedWeaponChargeJumpRecoverPhase", "MeleeActions.BaseMeleeAttackRecoverDefinition_inline0")
 	TweakDB:SetFlat("RangedWeaponChargeJumpRecoverPhase.changeNPCState", "")
 	TweakDB:SetFlat("RangedWeaponChargeJumpRecoverPhase.duration", 1)
+	TweakDB:SetFlat("RangedWeaponChargeJumpRecoverPhase.useDurationFromAnimSlot", false)
 
 
 
@@ -1982,7 +1991,7 @@ if EnableMod then
 
 	TweakDB:CloneRecord("RangedWeaponChargeJumpSequence", "MeleeOneHandedActions.MeleeChargeJump01Definition")
 	TweakDB:SetFlat("RangedWeaponChargeJumpSequence.actions", {"RangedWeaponChargeJumpTauntAction", "RangedWeaponChargeJumpAction", "RangedWeaponChargeJumpRecoverAction"})
-	setCOND("RangedWeaponChargeJumpSequence", {"Condition.CalculatePathStraightToTarget", "Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLegs", "Condition.AbilityHasChargeJump", "Condition.TargetAbove7mLongPrediction", "Condition.TargetBelow20m", "Condition.TargetBelow45deg", "Condition.TargetPOVBelow90deg", "Condition.NotTargetHeadingToOwnerDotProduct", "CONDHasHMG_OR_LMGOR", "Condition.HealthAbove30perc", "RangedWeaponChargeJumpCooldownCond"}, false)
+	setCOND("RangedWeaponChargeJumpSequence", {"Condition.CalculatePathStraightToTarget", "Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLegs", "Condition.AbilityHasChargeJump", "Condition.TargetAbove7mLongPrediction", "Condition.TargetBelow20m", "Condition.TargetBelow45deg", "Condition.TargetPOVBelow90deg", "Condition.NotTargetHeadingToOwnerDotProduct", "CONDHasHMG_OR_LMGOR", "Condition.HealthAbove30perc", "RangedWeaponChargeJumpCooldownCond", "Condition.NotIsMaxTacNPCRarity"}, false)
 
 
 
@@ -2370,11 +2379,16 @@ if EnableMod then
 	TweakDB:CloneRecord("ApplyBerserkTempDisableSandyEffectSubAction", "AbilityActions.BerserkActivation_inline4")
 	TweakDB:SetFlat("ApplyBerserkTempDisableSandyEffectSubAction.statusEffects", {"BerserkTempDisableSandyEffect"})
 
+	TweakDB:CloneRecord("BerserkRangedActivationPhase", "StatusEffectActions.SE_Madness_inline2")
+	TweakDB:SetFlat("BerserkRangedActivationPhase.duration", 2.5)
+	TweakDB:SetFlat("BerserkRangedActivationPhase.useDurationFromAnimSlot", false)
+
 	TweakDB:CloneRecord("BerserkRangedActivationAction", "StatusEffectActions.SE_Madness")
+	TweakDB:SetFlat("BerserkRangedActivationAction.loop", "BerserkRangedActivationPhase")
 	TweakDB:SetFlat("BerserkRangedActivationAction.subActions", {"StatusEffectActions.SE_Madness_inline3"})
 	TweakDB:SetFlat("BerserkRangedActivationAction.loopSubActions", {"BerserkActivationSubAction", "SpecialActions.UseCombatStimConsumable_inline6"})
 	--TweakDB:SetFlat("BerserkRangedActivationAction.startupSubActions", {"BerserkInvulSubAction"})
-	setCOND("BerserkRangedActivationAction", {"Condition.AbilityHasBerserk", "NotBerserkEffect", "Condition.TargetIsVisible"}, false)
+	setCOND("BerserkRangedActivationAction", {"Condition.AbilityHasBerserk", "NotBerserkEffect", "Condition.TargetIsVisible", "Condition.NotIsMaxTacNPCRarity", "Condition.NotInCover", "Condition.NotIsInWorkspot", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotWounded", "Condition.NotStatusEffectTagDismembered", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotInStatesEquip", "Condition.NotTicketSync", "Condition.NotHitTimeout2MinSeverity0"}, false)
 	TweakDB:SetFlat("BerserkRangedActivationAction.cooldowns", {"BerserkCooldown"})
 	TweakDB:SetFlat("BerserkRangedActivationAction.startupSubActions", {"BerserkInvulSubAction", "ApplyBerserkTempDisableSandyEffectSubAction"})
 
@@ -4345,16 +4359,20 @@ if EnableMod then
 
 	setArchetypeData("MaxtFastNetrunner", {"Sandy2AbilityGrp", "T3NetrunnerIconOnlyAbilityGrp", "BreakHoldAbilityGrp", "HitReactionMediumAbilityGrp", "SubdermalMedAbilityGrp", "ThermoAbilityGrp", "CortexAbilityGrp", "SeeCamoAbilityGrp", "SmokeyAbilityGrp", "ICEAbilityGrp", "GraphiteAbilityGrp", "BleedImmuneAbilityGrp", "ResetImmuneAbilityGrp", "MemWipeImmuneAbilityGrp", "ShockAbilityGrp", "MeleeTakedownAbilityGrp"}, {}, {"MaxtResStatModifierGrp", "MaxtHackResStatModifierGrp"}, "ArchetypeType.FastMeleeT3", true)
 
-	setArchetypeData("MaxtHeavyRanged", {"Sandy2AbilityGrp", "BerserkAbilityGrp", "T3HeavyRangedAbilityGrp", "BreakHoldAbilityGrp", "HitReactionTankyAbilityGrp", "SubdermalHighAbilityGrp", "ThermoAbilityGrp", "SeeCamoAbilityGrp", "SmokeyAbilityGrp", "TacticalAbilityGrp", "BleedImmuneAbilityGrp", "ResetImmuneAbilityGrp", "MemWipeImmuneAbilityGrp", "PoisonAbilityGrp", "MeleeTakedownAbilityGrp"}, {}, {"MaxtResStatModifierGrp", "MaxtHackResStatModifierGrp"}, "ArchetypeType.HeavyRangedT3", true)
+	setArchetypeData("MaxtHeavyRanged", {"T3HeavyRangedNoJumpAbilityGrp", "BreakHoldAbilityGrp", "HitReactionTankyAbilityGrp", "SubdermalHighAbilityGrp", "ThermoAbilityGrp", "SeeCamoAbilityGrp", "SmokeyAbilityGrp", "TacticalAbilityGrp", "BleedImmuneAbilityGrp", "ResetImmuneAbilityGrp", "MemWipeImmuneAbilityGrp", "PoisonAbilityGrp", "MeleeTakedownAbilityGrp"}, {}, {"MaxtResStatModifierGrp", "MaxtHackResStatModifierGrp"}, "ArchetypeType.HeavyRangedT3", true)
 
 
-	MaxtAbilityList = {"Ability.CanCrouch", "Ability.CanSprint", "Ability.CanSwitchWeapon", "Ability.CanShootWhileMoving", "Ability.CanPreciseShoot", "Ability.CanChargedShoot", "Ability.CanSmartShoot", "Ability.CanUseLeftHand", "Ability.CanUseRightHand", "Ability.CanUseLegs", "Ability.CanTaunt", "Ability.CanCloseCombat", "Ability.CanUseCuttingGrenades", "Ability.CanUseSmokeGrenades", "Ability.CanUseFlashbangGrenades", "Ability.IsAVMaxTac", "Ability.IsAggressive", "Ability.HasDodge", "Ability.CanRetreat"}
+	MaxtAbilityList = {"Ability.CanCrouch", "Ability.CanSprint", "Ability.CanSwitchWeapon", "Ability.CanShootWhileMoving", "Ability.CanPreciseShoot", "Ability.CanChargedShoot", "Ability.CanSmartShoot", "Ability.CanUseLeftHand", "Ability.CanUseRightHand", "Ability.CanUseLegs", "Ability.CanTaunt", "Ability.CanCloseCombat", "Ability.CanUseCuttingGrenades", "Ability.CanUseSmokeGrenades", "Ability.CanUseFlashbangGrenades", "Ability.IsAVMaxTac", "Ability.IsAggressive", "Ability.HasDodge", "Ability.CanRetreat", "Ability.CanSeeThroughSmoke", "Ability.HasMemoryWipeImmunity"}
+	MaxtHeavyAbilityList = {"Ability.CanCrouch", "Ability.CanSprint", "Ability.CanSwitchWeapon", "Ability.CanShootWhileMoving", "Ability.CanPreciseShoot", "Ability.CanChargedShoot", "Ability.CanSmartShoot", "Ability.CanUseLeftHand", "Ability.CanUseRightHand", "Ability.CanUseLegs", "Ability.CanTaunt", "Ability.CanCloseCombat", "Ability.CanUseCuttingGrenades", "Ability.CanUseSmokeGrenades", "Ability.CanUseFlashbangGrenades", "Ability.IsAVMaxTac", "Ability.IsAggressive", "Ability.CanRetreat", "Ability.CanSeeThroughSmoke", "Ability.HasMemoryWipeImmunity"}
 
 
 	MaxtacAbilityList = {"Character.maxtac_av_LMG_mb", "Character.maxtac_av_LMG_mb_2nd_wave", "Character.maxtac_av_mantis_wa", "Character.maxtac_av_mantis_wa_2nd_wave", "Character.maxtac_av_netrunner_ma", "Character.maxtac_av_netrunner_ma_2nd_wave", "Character.maxtac_av_riffle_ma", "Character.maxtac_av_riffle_ma_2nd_wave", "Character.maxtac_av_sniper_wa_elite", "Character.maxtac_av_sniper_wa_elite_2nd_wave", "Character.maxtac_gunner_mb_elite", "Character.maxtac_melee_ma_elite", "Character.maxtac_rifle_ma_elite", "Character.maxtac_rifle_wa_elite", "Character.maxtac_shotgun_ma_elite", "Character.maxtac_sniper_wa_elite", "Character.q305_maxtac_heavy", "Character.q305_maxtac_melee", "Character.q305_maxtac_miniboss_frifle_wa", "Character.q305_maxtac_miniboss_fshotgun_mb", "Character.q305_maxtac_miniboss_mantis_ma", "Character.q305_maxtac_miniboss_netrunner_ma", "Character.q305_maxtac_miniboss_sniper_ma", "Character.q305_maxtac_rifle_ma", "Character.q305_maxtac_rifle_wa", "Character.q305_maxtac_shotgun", "Character.q305_maxtac_sniper", "Character.q306_cloaked_hunter", "Character.mq030_melisa", "Character.mq030_max_tac_1", "Character.mq030_max_tac_2", "Character.mq030_max_tac_3", "Character.mq030_max_tac_4", "Character.mq030_max_tac_no_combat"}
 	for i,v in ipairs(MaxtacAbilityList) do
 		TweakDB:SetFlat(v..".abilities", MaxtAbilityList)
 		TweakDB:SetFlat(v..".skipDisplayArchetype", false)
+	end
+	for i,v in ipairs({"Character.maxtac_av_LMG_mb", "Character.maxtac_av_LMG_mb_2nd_wave", "Character.maxtac_gunner_mb_elite", "Character.q305_maxtac_heavy", "Character.mq030_max_tac_3"}) do
+		TweakDB:SetFlat(v..".abilities", MaxtHeavyAbilityList)
 	end
 
 
@@ -4538,7 +4556,7 @@ if EnableMod then
 
 	setArchetypeData("NUSAFastMelee", {"Sandy3AbilityGrp", "KerezAbilityGrp", "T3FastMeleeAbilityGrp", "BreakHoldAbilityGrp", "HitReactionTankyAbilityGrp", "SubdermalMedAbilityGrp", "SeeCamoAbilityGrp", "SmokeyAbilityGrp", "TacticalAbilityGrp", "BleedImmuneAbilityGrp", "MeleeTakedownAbilityGrp", "PoisonAbilityGrp"}, {}, {"NUSAResStatModifierGrp", "NUSAHackResStatModifierGrp"}, "ArchetypeType.FastMeleeT3", true)
 
-	setArchetypeData("NUSAHeavyRanged", {"Sandy2AbilityGrp", "BerserkAbilityGrp", "T3HeavyRangedAbilityGrp", "BreakHoldAbilityGrp", "HitReactionTankyAbilityGrp", "SubdermalHighAbilityGrp", "SeeCamoAbilityGrp", "SmokeyAbilityGrp", "TacticalAbilityGrp", "BleedImmuneAbilityGrp", "PoisonAbilityGrp"}, {}, {"NUSAResStatModifierGrp", "NUSAHackResStatModifierGrp"}, "ArchetypeType.HeavyRangedT3", true)
+	setArchetypeData("NUSAHeavyRanged", {"T3HeavyRangedNoJumpAbilityGrp", "BreakHoldAbilityGrp", "HitReactionTankyAbilityGrp", "SubdermalHighAbilityGrp", "SeeCamoAbilityGrp", "SmokeyAbilityGrp", "TacticalAbilityGrp", "BleedImmuneAbilityGrp", "PoisonAbilityGrp"}, {}, {"NUSAResStatModifierGrp", "NUSAHackResStatModifierGrp"}, "ArchetypeType.HeavyRangedT3", true)
 
 	--Change equip pool to rifle for fast ranged operatives and female operatives
 	NUSAAbilityList = {"Ability.CanCrouch", "Ability.CanSprint", "Ability.CanSwitchWeapon", "Ability.CanShootWhileMoving", "Ability.CanPreciseShoot", "Ability.CanChargedShoot", "Ability.CanSmartShoot", "Ability.CanUseLeftHand", "Ability.CanUseRightHand", "Ability.CanUseLegs", "Ability.CanTaunt", "Ability.CanCloseCombat", "Ability.CanUseSmokeGrenades", "Ability.CanUseFragGrenades", "Ability.CanUseFlashbangGrenades", "Ability.HasDodge", "Ability.IsBalanced"}
@@ -4589,8 +4607,19 @@ if EnableMod then
 			local target = customName or (weapon.."_Legendary")
 			TweakDB:CloneRecord(target, weapon)
 			addToList(target..".tags", "Unbreakable")
-			addToList(target..".statModifiers", "Quality.LegendaryQualityModifier")
+			addToList(target..".tags", "AutoScalingItem")
+			TweakDB:SetFlat(target..".scaleToPlayer", true)
 			TweakDB:SetFlat(target..".quality", "Quality.Legendary")
+			local mods = TweakDB:GetFlat(target..".statModifiers")
+			if type(mods) == "table" then
+				local filtered = {}
+				for _, m in ipairs(mods) do
+					if tostring(m) ~= tostring(TweakDBID.new("Quality.BrokenItem")) and m ~= "Quality.BrokenItem" then
+						table.insert(filtered, m)
+					end
+				end
+				TweakDB:SetFlat(target..".statModifiers", filtered)
+			end
 		end
 
 	else
@@ -4599,8 +4628,8 @@ if EnableMod then
 			local target = customName or (weapon.."_Legendary")
 			TweakDB:CloneRecord(target, weapon)
 			addToList(target..".tags", "Unbreakable")
-			--addToList(target..".statModifiers", "Quality.LegendaryQualityModifier")
-			--TweakDB:SetFlat(target..".quality", "Quality.Legendary")
+			addToList(target..".tags", "AutoScalingItem")
+			TweakDB:SetFlat(target..".scaleToPlayer", true)
 		end
 
 	end
@@ -5508,7 +5537,7 @@ if EnableMod then
 
 
 
-	createSelector("HumanoidSandyVersusSandySelector", {"Condition.AbilityHasSandevistan", "Condition.TargetIsPlayer", "SandyVSandyOROR"}, {"SandyVSandyTier3Action", "SandyVSandyTier2Action", "SandyVSandyTier1Action", "SandyVSandyTier0Action"}, false)
+	createSelector("HumanoidSandyVersusSandySelector", {"Condition.AbilityHasSandevistan", "Condition.TargetIsPlayer", "SandyVSandyOROR", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotWounded"}, {"SandyVSandyTier3Action", "SandyVSandyTier2Action", "SandyVSandyTier1Action", "SandyVSandyTier0Action"}, false)
 
 
 	createComposite("HumanoidSandyVersusSandyComposite", {"HumanoidSandyVersusSandySelector"})
@@ -7235,7 +7264,7 @@ if EnableMod then
 	
 	--dont put most vfx on right arm
 
-	createStatusEffect("SmasherBerserkMeleeEffect", "BaseStatusEffect.BerserkNPCBuff", {}, {"eye_glow_red", "status_heartattack", "special_finishers_impact", "fallback", "energy", "weakspot_weak", "charging_gatling_right", "charging_gatling", "exp_weakspot_gatling", "rocket_flaps_heat_gatling", "smashed_gatling", "exp_launcher_gatling"}, 30, TweakDB:GetFlat("BaseStatusEffect.BerserkNPCBuff.gameplayTags"), {"BaseStatusEffect.BerserkPlayerSFXEffector"}, {"ImpactUnstoppableStat", "ImpactCoverUnstoppableStat", "StaggerUnstoppableStat", "StaggerCoverUnstoppableStat", "KnockdownUnstoppableStat", "KnockdownCoverUnstoppableStat", "KnockdownImpulseUnstoppableStat", "WoundLAStat", "WoundRAStat", "WoundLLStat", "WoundRLStat", "DismHStat", "DismLAStat", "DismRAStat", "DismLLStat", "DismRLStat", "WoundImmuneStat", "BaseStatusEffect.Berserker_inline4", "BerserkNPCDamageBoost", "ArmorBonus50", "ArmorBonus50", "CounterImmuneStat", "ExtendedHitImmuneStat", "Character.Maxtac_miniboss_ModGroup_inline2", "NPCRarity.MaxTac_inline14", "NPCRarity.MaxTac_inline7", "NPCRarity.MaxTac_inline2", "StunImmuneStat", "ThrowImmuneStat", "TranqImmuneStat", "VulnerableImmuneStat", "Ability.HasBurningImmunity_inline1", "Ability.HasElectrocuteImmunity_inline1", "Ability.HasExtendedHitReactionImmunity_inline1", "Ability.HasPoisonImmunity_inline1", "Character.Mechanical_Immunities_ModGroup_inline2", "WorkspotStatus.Immune_inline3", "BerserkNPCPoiseBoost", "Ability.HasMeleeHitReactionAndTakedownResistance_inline1", "BerserkNPCDamageBoostPhysical", "BerserkNPCTBHReduction", "KnockdownImmuneStat", "BlindImmuneStat"})
+	createStatusEffect("SmasherBerserkMeleeEffect", "BaseStatusEffect.BerserkNPCBuff", {}, {"eye_glow_red", "status_heartattack", "special_finishers_impact", "energy", "charging_gatling_right", "charging_gatling", "exp_weakspot_gatling", "rocket_flaps_heat_gatling", "smashed_gatling", "exp_launcher_gatling"}, 30, TweakDB:GetFlat("BaseStatusEffect.BerserkNPCBuff.gameplayTags"), {"BaseStatusEffect.BerserkPlayerSFXEffector"}, {"ImpactUnstoppableStat", "ImpactCoverUnstoppableStat", "StaggerUnstoppableStat", "StaggerCoverUnstoppableStat", "KnockdownUnstoppableStat", "KnockdownCoverUnstoppableStat", "KnockdownImpulseUnstoppableStat", "WoundLAStat", "WoundRAStat", "WoundLLStat", "WoundRLStat", "DismHStat", "DismLAStat", "DismRAStat", "DismLLStat", "DismRLStat", "WoundImmuneStat", "BaseStatusEffect.Berserker_inline4", "BerserkNPCDamageBoost", "ArmorBonus50", "ArmorBonus50", "CounterImmuneStat", "ExtendedHitImmuneStat", "Character.Maxtac_miniboss_ModGroup_inline2", "NPCRarity.MaxTac_inline14", "NPCRarity.MaxTac_inline7", "NPCRarity.MaxTac_inline2", "StunImmuneStat", "ThrowImmuneStat", "TranqImmuneStat", "VulnerableImmuneStat", "Ability.HasBurningImmunity_inline1", "Ability.HasElectrocuteImmunity_inline1", "Ability.HasExtendedHitReactionImmunity_inline1", "Ability.HasPoisonImmunity_inline1", "Character.Mechanical_Immunities_ModGroup_inline2", "WorkspotStatus.Immune_inline3", "BerserkNPCPoiseBoost", "Ability.HasMeleeHitReactionAndTakedownResistance_inline1", "BerserkNPCDamageBoostPhysical", "BerserkNPCTBHReduction", "KnockdownImmuneStat", "BlindImmuneStat"})
 
 
 
@@ -7260,7 +7289,7 @@ if EnableMod then
 	createRegenEffector("SmasherRegenPhase2", 0, 80, 2.5)
 	--trail_physical status_electricity_resistance fallback
 
-	createStatusEffect("SmasherRegenPhase2Effect", "BaseStatusEffect.CombatStim", {"quickhack_system_reset"}, {"regeneration", "trail_physical", "status_electricity_resistance", "fallback"}, 6, TweakDB:GetFlat("BaseStatusEffect.CombatStim.gameplayTags"), {"SmasherRegenPhase2ModifyStatPoolEffector"}, {})
+	createStatusEffect("SmasherRegenPhase2Effect", "BaseStatusEffect.CombatStim", {"quickhack_system_reset"}, {"regeneration", "trail_physical", "status_electricity_resistance"}, 6, TweakDB:GetFlat("BaseStatusEffect.CombatStim.gameplayTags"), {"SmasherRegenPhase2ModifyStatPoolEffector"}, {})
 	createStatusEffectSubAction("SmasherRegenPhase2", 1.3, {"SmasherRegenPhase2Effect"}, "AIActionTarget.Owner", true)
 
 	--[[
@@ -7961,7 +7990,8 @@ if EnableMod then
 
 
 	--berserk without armor boost
-	createStatusEffect("SmasherBlackwallEffect", "BaseStatusEffect.BlackwallCooldown", {}, {"eye_glow_red", "status_heartattack", "special_finishers_impact", "fallback", "energy", "weakspot_weak", "charging_gatling_right", "charging_gatling", "exp_weakspot_gatling", "rocket_flaps_heat_gatling", "smashed_gatling", "exp_launcher_gatling", "eye_flare"}, 30, TweakDB:GetFlat("BaseStatusEffect.BlackwallCooldown.gameplayTags"), {}, {"ImpactUnstoppableStat", "ImpactCoverUnstoppableStat", "StaggerUnstoppableStat", "StaggerCoverUnstoppableStat", "KnockdownUnstoppableStat", "KnockdownCoverUnstoppableStat", "KnockdownImpulseUnstoppableStat", "WoundLAStat", "WoundRAStat", "WoundLLStat", "WoundRLStat", "DismHStat", "DismLAStat", "DismRAStat", "DismLLStat", "DismRLStat", "WoundImmuneStat", "BaseStatusEffect.Berserker_inline4", "BerserkNPCDamageBoost", "CounterImmuneStat", "ExtendedHitImmuneStat", "Character.Maxtac_miniboss_ModGroup_inline2", "NPCRarity.MaxTac_inline14", "NPCRarity.MaxTac_inline7", "NPCRarity.MaxTac_inline2", "StunImmuneStat", "ThrowImmuneStat", "TranqImmuneStat", "VulnerableImmuneStat", "Ability.HasBurningImmunity_inline1", "Ability.HasElectrocuteImmunity_inline1", "Ability.HasExtendedHitReactionImmunity_inline1", "Ability.HasPoisonImmunity_inline1", "Character.Mechanical_Immunities_ModGroup_inline2", "WorkspotStatus.Immune_inline3", "BerserkNPCPoiseBoost", "Ability.HasMeleeHitReactionAndTakedownResistance_inline1", "BerserkNPCDamageBoostPhysical", "BerserkNPCTBHReduction", "KnockdownImmuneStat"})
+	createStatusEffect("SmasherBlackwallEffect", "BaseStatusEffect.BlackwallCooldown", {}, {"eye_glow_red", "status_heartattack", "special_finishers_impact", "energy", "charging_gatling_right", "charging_gatling", "exp_weakspot_gatling", "rocket_flaps_heat_gatling", "smashed_gatling", "exp_launcher_gatling", "eye_flare"}, 30, TweakDB:GetFlat("BaseStatusEffect.BlackwallCooldown.gameplayTags"), {}, {"ImpactUnstoppableStat", "ImpactCoverUnstoppableStat", "StaggerUnstoppableStat", "StaggerCoverUnstoppableStat", "KnockdownUnstoppableStat", "KnockdownCoverUnstoppableStat", "KnockdownImpulseUnstoppableStat", "WoundLAStat", "WoundRAStat", "WoundLLStat", "WoundRLStat", "DismHStat", "DismLAStat", "DismRAStat", "DismLLStat", "DismRLStat", "WoundImmuneStat", "BaseStatusEffect.Berserker_inline4", "BerserkNPCDamageBoost", "CounterImmuneStat", "ExtendedHitImmuneStat", "Character.Maxtac_miniboss_ModGroup_inline2", "NPCRarity.MaxTac_inline14", "NPCRarity.MaxTac_inline7", "NPCRarity.MaxTac_inline2", "StunImmuneStat", "ThrowImmuneStat", "TranqImmuneStat", "VulnerableImmuneStat", "Ability.HasBurningImmunity_inline1", "Ability.HasElectrocuteImmunity_inline1", "Ability.HasExtendedHitReactionImmunity_inline1", "Ability.HasPoisonImmunity_inline1", "Character.Mechanical_Immunities_ModGroup_inline2", "WorkspotStatus.Immune_inline3", "BerserkNPCPoiseBoost", "Ability.HasMeleeHitReactionAndTakedownResistance_inline1", "BerserkNPCDamageBoostPhysical", "BerserkNPCTBHReduction", "KnockdownImmuneStat"})
+	TweakDB:SetFlat("SmasherBlackwallEffect.uiData", "")
 
 
 	createStatusEffectSubAction("SmasherBlackwall", 0, {"SmasherBlackwallEffect"}, "AIActionTarget.Owner", true)
@@ -8049,7 +8079,7 @@ if EnableMod then
 	TweakDB:SetFlat("Character.q113_smasher_arasaka_sniper.archetypeData", "SmasherSniperArchetypeData")
 
     for i,v in ipairs({"Character.q113_smasher_arasaka_mantis", "Character.q113_smasher_arasaka_mantis_officer", "Character.q113_smasher_arasaka_masamune", "Character.q113_smasher_arasaka_netrunner", "Character.q113_smasher_arasaka_sniper"}) do
-        TweakDB:SetFlat(v..".displayName", LocKey(0ull))
+        TweakDB:SetFlat(v..".displayName", LocKey(1182ull))
 		TweakDB:SetFlat(v..".threatTrackingPreset", "TargetTracking.BossPreset")
 		TweakDB:SetFlat(v..".sensePreset", "Senses.Combat")
     end
@@ -11248,7 +11278,7 @@ if EnableMod then
 	TweakDB:SetFlat("AdamSmasherBoss.MissileRetreatCooldown.duration", 60)
 
 
-	createStatusEffect("SmasherShieldEffect", "AdamSmasher.Invulnerable", {"w_expl_blackwall_shortcircuit"}, {"fx_sandevistan_trails", "fx_sandevistan_center", "trail_physical", "netrunner_virus_big", "fallback", "charging_gatling", "charging_splash_left", "fx_sandevistan_versus_start", "camo_intro_vfx", "decay", "fx_sandevistan_versus_loop"}, 30, TweakDB:GetFlat("AdamSmasher.Invulnerable.gameplayTags"), {"RibakovBoss.ApplyReactionImmunitiesEffector"}, {"RibakovBoss.ArmorUp_inline1", "VulnerableImmuneStat", "BaseStatusEffect.GlowingTattoos_inline2", "OdaShieldCritImmunity", "OdaShieldBlindImmunity", "OdaShieldBleedImmunity", "OdaShieldEMPImmunity", "OdaShieldElectrocuteImmunity", "OdaShieldHeadshotImmunity", "OdaShieldPoisonImmunity", "GLP.DeactivateDangerousCyberware_inline4"})
+	createStatusEffect("SmasherShieldEffect", "AdamSmasher.Invulnerable", {"w_expl_blackwall_shortcircuit"}, {"fx_sandevistan_trails", "fx_sandevistan_center", "trail_physical", "netrunner_virus_big", "charging_gatling", "charging_splash_left", "fx_sandevistan_versus_start", "camo_intro_vfx", "decay", "fx_sandevistan_versus_loop"}, 30, TweakDB:GetFlat("AdamSmasher.Invulnerable.gameplayTags"), {"RibakovBoss.ApplyReactionImmunitiesEffector"}, {"RibakovBoss.ArmorUp_inline1", "VulnerableImmuneStat", "BaseStatusEffect.GlowingTattoos_inline2", "OdaShieldCritImmunity", "OdaShieldBlindImmunity", "OdaShieldBleedImmunity", "OdaShieldEMPImmunity", "OdaShieldElectrocuteImmunity", "OdaShieldHeadshotImmunity", "OdaShieldPoisonImmunity", "GLP.DeactivateDangerousCyberware_inline4"})
 	createStatusEffectSubAction("SmasherShield", 0, {"SmasherShieldEffect"}, "AIActionTarget.Owner", true)
 
 	addToList("AdamSmasherBoss.SpecialAttackHMG01Emergency.startupSubActions", "SmasherShieldStatusEffectSubAction")
@@ -12515,7 +12545,7 @@ if EnableMod then
 
 
 	--get enemies to catch up faster
-	TweakDB:SetFlat("CatchUpSelectorAND.AND", {"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.NotAbilityIsReckless", "Condition.HealthAbove30perc", "Condition.NotHasShotgun", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.NotAbilityIsSniperArchetype"})
+	TweakDB:SetFlat("CatchUpSelectorAND.AND", {"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.NotAbilityIsReckless", "Condition.NotHasShotgun", "Condition.NotAbilityIsNetrunnerArchetype", "Condition.NotAbilityIsSniperArchetype"})
 
 	TweakDB:SetFlat("RecklessAndCatchUpAND.AND", {"Condition.NotTicketTakeCover", "Condition.NotTicketEquip", "Condition.CombatTarget", "Condition.NotTargetInvalidExpectation", "Condition.MovePolicyCooldown", "Condition.PathMovePolicyLongCooldown", "Condition.PauseByDynamicCollisionCooldown", "Condition.InitialCatchUpCooldown", "Condition.NotIsEnteringOrLeavingCover", "Condition.NotIsUsingOffMeshLink", "Condition.NotAIMoveCommand", "Condition.NotAIUseWorkspotCommand", "Condition.NotIsNPCBlinded", "Condition.AbilityIsReckless"})
 
@@ -12659,10 +12689,10 @@ if EnableMod then
 	--instantcond DashAndDodgeActions.DodgeAfterHitReactionConditionDefinition containing DashAndDodgeActions.DodgeAfterHitReactionCompositeSelectorDefinition
 
 	--allow then to dodge even if target does not have melee weap and is reckless
-	TweakDB:SetFlat("DashAndDodgeActions.DodgeAfterHitReactionConditionDefinition_inline1.AND", {"Condition.TargetBelow3mPrediction", "Condition.HitTimeout3MinSeverity1MaxSeverity6", "Condition.AbilityCanUseLegs", "Condition.DodgeAfterHitReactionCooldown", "Condition.NotInStatesParry"})
+	TweakDB:SetFlat("DashAndDodgeActions.DodgeAfterHitReactionConditionDefinition_inline1.AND", {"Condition.TargetBelow3mPrediction", "Condition.HitTimeout3MinSeverity1MaxSeverity6", "Condition.AbilityCanUseLegs", "Condition.DodgeAfterHitReactionCooldown", "Condition.NotInStatesParry", "Condition.NotInStatesDefend", "Condition.NotStatusEffectTypeStun", "Condition.NotStatusEffectDefeated", "Condition.NotWounded"})
 
 	TweakDB:SetFlat("Condition.DodgeAfterHitReactionCooldown_inline0.duration", 10)--otherwise dodge back too much
-	TweakDB:SetFlat("CombatDecorator.MeleeBlockState_inline1.duration", 10)--not sure if it works
+	TweakDB:SetFlat("CombatDecorator.MeleeBlockState_inline1.duration", 1)--restore BlockStateCooldown to vanilla 1s (was 10s, delaying consecutive blocks)
 
 	--had to change instantcond DashAndDodgeActions.SandevistanChargeCondition to be failure for resultiffailed. Do this for all 3 meleechargesingleselector
 
@@ -12712,7 +12742,7 @@ if EnableMod then
 
 	--fix generic melee dodge conditions and added maxdodge?
 	--TweakDB:SetFlat("DashAndDodgeActions.GenericMeleeDodgeConditionDefinition.AND", {"Condition.HitDodgeCooldown", "Condition.NotIsNPCBlinded", "Condition.NotTargetInStatesBlock", "Condition.HasMeleeWeapon", "Condition.NotStatusEffectExhausted", "Condition.NotStatusEffectDefeated", "Condition.NotWounded", "Condition.NotIsUsingOffMeshLink", "Condition.NotMeleeStatesAttackConditions", "Condition.NotTicketEquip", "Condition.TargetBelow90deg", "Condition.TargetBelow20m", "Condition.AbilityCanUseLegs", "Condition.NotHitTimeout2MinSeverity0", "Condition.NotInStatesDefend", "Condition.NotInStatesParry"})
-	TweakDB:SetFlat("DashAndDodgeActions.GenericMeleeDodgeConditionDefinition.AND", {"Condition.HitDodgeCooldown", "Condition.NotIsNPCBlinded", "Condition.NotTargetInStatesBlock", "Condition.HasMeleeWeapon", "Condition.NotStatusEffectExhausted", "Condition.NotStatusEffectDefeated", "Condition.NotWounded", "Condition.NotIsUsingOffMeshLink", "Condition.NotMeleeStatesAttackConditions", "Condition.NotTicketEquip", "Condition.TargetBelow90deg", "Condition.TargetBelow20m", "Condition.AbilityCanUseLegs"})
+	TweakDB:SetFlat("DashAndDodgeActions.GenericMeleeDodgeConditionDefinition.AND", {"Condition.HitDodgeCooldown", "Condition.NotIsNPCBlinded", "Condition.NotTargetInStatesBlock", "Condition.HasMeleeWeapon", "Condition.NotStatusEffectExhausted", "Condition.NotStatusEffectDefeated", "Condition.NotWounded", "Condition.NotIsUsingOffMeshLink", "Condition.NotMeleeStatesAttackConditions", "Condition.NotTicketEquip", "Condition.TargetBelow90deg", "Condition.TargetBelow20m", "Condition.AbilityCanUseLegs", "Condition.NotHitTimeout2MinSeverity0", "Condition.NotInStatesDefend", "Condition.NotInStatesParry", "Condition.NotStatusEffectTypeStun"})
 
 	--allow parrying from melee defense without min block count
 	TweakDB:SetFlat("CombatDecorator.MeleeParryState_inline5.AND", {"Condition.AbilityCanParry", "Condition.AbilityCanBlock", "Condition.TargetBelow4m", "Condition.TargetBelow120deg"})
@@ -12720,8 +12750,8 @@ if EnableMod then
 	--speed up katana parry
 	addToList("MeleeKatanaActions.ParryMeleeAttack01Definition.subActions", "DashAndDodgeActions.CarDodgeKerenzikovLeftFront_inline6")
 
-	--adjusting melee block conditions, remove sandy stuff and add block ability cond and not attack state
-	TweakDB:SetFlat("MeleeActions.MeleeBlockCondition_inline1.AND", {"Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLeftHand", "Condition.StaminaAbove0perc", "Condition.GuardBreakCooldown", "Condition.HasMeleeWeapon", "Condition.TargetHasMeleeWeapon", "Condition.NotAttackWithSubActionInAir", "Condition.NotInStatesParry", "Condition.NotTicketDodge", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.TargetBelow120deg", "Condition.NotStatusEffectTypeStun", "Condition.AbilityCanBlock", "Condition.NotInStatesAttack"})
+	--adjusting melee block conditions, remove sandy stuff, keep Kerenzikov fallback, and allow blocking without waiting for attack state exit
+	TweakDB:SetFlat("MeleeActions.MeleeBlockCondition_inline1.AND", {"Condition.AbilityCanUseRightHand", "Condition.AbilityCanUseLeftHand", "Condition.StaminaAbove0perc", "Condition.GuardBreakCooldown", "Condition.HasMeleeWeapon", "Condition.TargetHasMeleeWeapon", "Condition.NotAttackWithSubActionInAir", "Condition.NotInStatesParry", "Condition.NotTicketDodge", "Condition.NotIsUsingOffMeshLink", "Condition.NotTicketEquip", "Condition.TargetBelow120deg", "Condition.NotStatusEffectTypeStun", "MeleeActions.MeleeBlockCondition_inline3"})
 
 
 	
@@ -12821,7 +12851,7 @@ if EnableMod then
 
 
 	TweakDB:SetFlat("Items.Base_Mantis_Blades_NPC_Stats_inline1.value", 1)
-	TweakDB:SetFlat("Items.Base_Katana_NPC_Stats_inline1.value", 1)--causes tpose with slow push from dodgeafterhit
+	TweakDB:SetFlat("Items.Base_Katana_NPC_Stats_inline1.value", 0)--causes tpose with slow push from dodgeafterhit
 
 	TweakDB:SetFlat("Items.Base_Two_Hand_Hammer_NPC_Stats_inline2.value", 1)
 	TweakDB:SetFlat("Items.Base_Two_Hand_Hammer_NPC_Stats_inline3.value", 1)

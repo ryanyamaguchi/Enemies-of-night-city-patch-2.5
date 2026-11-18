@@ -54,12 +54,14 @@ if EnableMod then
     TweakDB:SetFlat("Character.Main_boss_chimera_stats_inline0.value", ChimeraHP)
     TweakDB:SetFlat("ChimeraDmgStat.value", ChimeraDmg)
 
-    if RemoveBreachRestrictions then
-    	TweakDB:SetFlat("BreachAction.targetPrereqs", {})
-        TweakDB:SetFlat("BreachAction.targetActivePrereqs", {"Prereqs.QuickHackUploadingPrereq", "Prereqs.ChimeraNoQuickHackPrereq", "Prereqs.ChimeraNoQuickHackPrereq"})
-    else
-        TweakDB:SetFlat("BreachAction.targetPrereqs", {"BreachMultiPrereq"})
-        TweakDB:SetFlat("BreachAction.targetActivePrereqs", {"Prereqs.QuickHackUploadingPrereq", "Prereqs.ChimeraNoQuickHackPrereq", "Prereqs.ChimeraNoQuickHackPrereq", "Prereqs.ConnectedToBackdoorActive"})
+    if EnableMod and EnableBreachProtocol and TweakDB:GetRecord("BreachAction") ~= nil then
+        if RemoveBreachRestrictions then
+            TweakDB:SetFlat("BreachAction.targetPrereqs", {})
+            TweakDB:SetFlat("BreachAction.targetActivePrereqs", {"Prereqs.QuickHackUploadingPrereq", "Prereqs.ChimeraNoQuickHackPrereq", "Prereqs.ChimeraNoQuickHackPrereq"})
+        else
+            TweakDB:SetFlat("BreachAction.targetPrereqs", {"BreachMultiPrereq"})
+            TweakDB:SetFlat("BreachAction.targetActivePrereqs", {"Prereqs.QuickHackUploadingPrereq", "Prereqs.ChimeraNoQuickHackPrereq", "Prereqs.ChimeraNoQuickHackPrereq", "Prereqs.ConnectedToBackdoorActive"})
+        end
     end
 
 
